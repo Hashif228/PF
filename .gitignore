@@ -1,0 +1,24 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+env/
+venv/
+
+# SQLite DB
+*.sqlite3
+
+# IDE settings
+.vscode/
+.idea/
+
+# Environment variables
+*.env
+
+# Mac system file
+.DS_Store
+
+# Django migrations (optional)
+**/migrations/*.py
+!**/migrations/__init__.py
