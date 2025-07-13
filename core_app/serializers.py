@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Product, Review
+from django.contrib.auth.models import User
 
 class ProductSerializer(serializers.ModelSerializer):
     average_rating = serializers.FloatField(read_only=True)
@@ -17,7 +18,6 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 
 
-from django.contrib.auth.models import User
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, min_length=6)

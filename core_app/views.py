@@ -7,7 +7,7 @@ from .models import Product, Review
 from .serializers import ProductSerializer, ReviewSerializer, RegisterSerializer
 
 
-class ProductListView(APIView):
+class ProductList(APIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     def get(self, request):
@@ -34,7 +34,7 @@ class ProductListView(APIView):
         return Response(serializer.errors, status=400)
 
 
-class ProductDetailView(APIView):
+class ProductDetail(APIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     def get_product(self, pk):
@@ -80,7 +80,7 @@ class ProductDetailView(APIView):
         return Response(serializer.errors, status=400)
 
 
-class SubmitReviewView(APIView):
+class SubmitReview(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request):
@@ -100,7 +100,7 @@ class SubmitReviewView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class RegisterView(APIView):
+class Register(APIView):
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid():
