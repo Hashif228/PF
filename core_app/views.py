@@ -70,7 +70,8 @@ class ProductDetail(APIView):
 
     def put(self, request, pk):
         if not request.user.is_staff:
-            return Response({"detail": "Only admins can update products."}, status=403)
+            return Response({"detail": "Only admins can update products."}, status=status.HTTP_403_FORBIDDEN)
+
 
         product = self.get_product(pk)
         serializer = ProductSerializer(product, data=request.data)
