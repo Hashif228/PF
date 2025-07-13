@@ -9,7 +9,7 @@ urlpatterns = [
     path('reviews/submit/', SubmitReview.as_view()),
     path('auth/token/', obtain_auth_token),
     path('auth/register/', Register.as_view()),
-    path('auth/logout/', Logout.as_view()),
+    path('auth/logout/', Logout.as_view())
 
 ]
 
